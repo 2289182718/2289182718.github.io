@@ -5,17 +5,30 @@
 <title>刘晋齐的网站</title>
 </head>
  
-<body>
-视频
-</body>
-<video width="320" height="240" controls>
-  <source src="movie.mp4" type="video/mp4">
-  <source src="movie.ogg" type="video/ogg">
-您的浏览器不支持Video标签。
-</video>
+<p id="demo">点击按钮获取您当前坐标（可能需要比较长的时间获取）：</p>
+<button onclick="getLocation()">点我</button>
+<script>
+var x=document.getElementById("demo");
+function getLocation()
+{
+	if (navigator.geolocation)
+	{
+		navigator.geolocation.getCurrentPosition(showPosition);
+	}
+	else
+	{
+		x.innerHTML="该浏览器不支持获取地理位置。";
+	}
+}
+
+function showPosition(position)
+{
+	x.innerHTML="纬度: " + position.coords.latitude + 
+	"<br>经度: " + position.coords.longitude;	
+}
 <a href="https://www.runoob.com/">访问菜鸟教程</a>
  <a href="https://www.baidu.com/">访问百度</a>
- <a href="https://www..com/">访问</a>
+ <a href="https://www.bilibili.com/">哔哩哔哩</a>
 
  
 </html>
