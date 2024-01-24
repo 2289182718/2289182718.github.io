@@ -330,6 +330,53 @@
 <h6 align="center"><p>如果没有你想要的电影，请发送邮箱到HG@5s2rkp.onmicrosoft.com；格式：《电影名称》+时长+语言版本 </p></h6>
 <h2 align="center"><a href="https://5s2rkp-my.sharepoint.com/:w:/g/personal/hg_5s2rkp_onmicrosoft_com/Ea9Xo-7_IqBDqVOBbEBtTlgBYK7J9Ch9PkgglQCllBXjdg?e=Fdh4HR">更新日志</a></h2>
 <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<p></p>
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>点击按钮获取地理位置：</p>
+
+<button onclick="getLocation()">获取位置</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else { 
+    x.innerHTML = "Geolocation 不被此浏览器支持。";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "纬度: " + position.coords.latitude + 
+  "<br>经度: " + position.coords.longitude; 
+}
+
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      x.innerHTML = "用户拒绝了位置服务请求。"
+      break;
+    case error.POSITION_UNAVAILABLE:
+      x.innerHTML = "位置信息是不可用的。"
+      break;
+    case error.TIMEOUT:
+      x.innerHTML = "请求用户位置超时。"
+      break;
+    case error.UNKNOWN_ERROR:
+      x.innerHTML = "发生未知错误。"
+      break;
+  }
+}
+</script>
+
+</body>
+</html>
     </div>
   </div>
 
