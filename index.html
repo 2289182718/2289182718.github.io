@@ -377,6 +377,22 @@ function showError(error) {
 
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>高德地图示例</title>
+</head>
+<body>
+    <div id="mapContainer" style="width:500px;height:500px;"></div>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=您的key"></script>
+    <script type="text/javascript">
+        var map = new AMap.Map('mapContainer', {
+            center: [104.048119, 30.507509],
+            zoom: 13
+        });
+    </script>
+</body>
+</html>
     </div>
   </div>
 
