@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>获取实时时间</title>
+    <script type="text/javascript">
+        function getTime() {
+            var now = new Date(); // 创建日期对象
+            var hours = now.getHours(); // 小时数（0~23）
+            var minutes = now.getMinutes(); // 分钟数（0~59）
+            var seconds = now.getSeconds(); // 秒数（0~59）
+            
+            document.getElementById("time").innerHTML = "当前时间为：" + hours + ":" + minutes + ":" + seconds; // 将时间显示到页面上的元素中
+        }
+        
+        setInterval(getTime, 1000); // 每隔1秒调用一次函数更新时间
+    </script>
+</head>
+<body onload="getTime()"> <!-- 页面加载完成后自动调用函数 -->
+    <div id="time"></div> <!-- 定义一个 div 元素作为容器，用于展示时间 -->
+</body>
